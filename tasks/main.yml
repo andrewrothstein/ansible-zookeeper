@@ -1,0 +1,13 @@
+---
+- name: download zookeeper...
+  environment: proxy_env
+  get_url: url='{{ zk_url }}' dest='/tmp/{{ zk_archive }}'
+
+- name: unarchive zookeeper...
+  unarchive: copy=no src='/tmp/{{ zk_archive }}' dest='/opt'
+
+- name: link /opt/zookeeper...
+  file: src='/opt/{{ zk_name }}' dest='/opt/zookeeper' state=link
+
+- name: include zookeeper scripts in the default path...
+  copy: src='etc/profile.d/zk.sh' dest='/etc/profile.d/zk.sh' mode=644
