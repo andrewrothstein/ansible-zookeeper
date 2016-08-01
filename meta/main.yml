@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: installs a systemd zookeeper unit. configure to suite.
+  description: installs zookeeper
   company: BlackRock
   license:
     - MIT
@@ -20,6 +20,7 @@ galaxy_info:
     - development
 
 dependencies:
+  - role: andrewrothstein.unarchive-deps
+    version: v1.0.3
   - role: andrewrothstein.java
     version: v1.0.1
-  

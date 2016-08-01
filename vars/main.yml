@@ -1,5 +1,4 @@
 ---
-zk_ver : '3.4.6'
-zk_name : 'zookeeper-{{ zk_ver }}'
-zk_archive : '{{ zk_name }}.tar.gz'
-zk_url : 'http://mirror.cc.columbia.edu/pub/software/apache/zookeeper/{{ zk_name }}/{{ zk_archive }}'
+zookeeper_name : 'zookeeper-{{zookeeper_ver}}'
+zookeeper_tgz : '{{zookeeper_name}}.tar.gz'
+zookeeper_tgz_url : '{{zookeeper_mirror}}/{{zookeeper_name}}/{{zookeeper_tgz}}'

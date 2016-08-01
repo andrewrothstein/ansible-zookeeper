@@ -1,13 +1,40 @@
 ---
+- name: create zookeeper group
+  become: yes
+  become_user: root
+  group: >-
+    name={{zookeeper_group}}
+    state=present
+
+- name: create zookeeper user
+  become: yes
+  become_user: root
+  user: >
+    name={{zookeeper_user}}
+    group={{zookeeper_group}}
+    state=present
+    home={{zookeeper_home}}
+
 - name: download zookeeper...
-  environment: proxy_env
-  get_url: url='{{ zk_url }}' dest='/tmp/{{ zk_archive }}'
+  become: yes
+  become_user: '{{zookeeper_user}}'
+  get_url: >
+    url={{zookeeper_tgz_url}}
+    dest={{zookeeper_home}}/{{zookeeper_tgz}}
+    mode=0644
 
 - name: unarchive zookeeper...
-  unarchive: copy=no src='/tmp/{{ zk_archive }}' dest='/opt'
+  become: yes
+  become_user: '{{zookeeper_user}}'
+  unarchive: >
+    copy=no
+    src={{zookeeper_home}}/{{zookeeper_tgz}}
+    dest={{zookeeper_home}}
 
-- name: link /opt/zookeeper...
-  file: src='/opt/{{ zk_name }}' dest='/opt/zookeeper' state=link
-
-- name: include zookeeper scripts in the default path...
-  copy: src='etc/profile.d/zk.sh' dest='/etc/profile.d/zk.sh' mode=644
+- name: link zookeeper...
+  become: yes
+  become_user: '{{zookeeper_user}}'
+  file: >
+    src={{zookeeper_home}}/{{zookeeper_name}}
+    dest={{zookeeper_home}}/zookeeper
+    state=link
