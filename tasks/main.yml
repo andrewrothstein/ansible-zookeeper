@@ -22,6 +22,7 @@
     url={{zookeeper_tgz_url}}
     dest={{zookeeper_home}}/{{zookeeper_tgz}}
     mode=0644
+    timeout={{zookeeper_dl_timeout_seconds}}
 
 - name: unarchive zookeeper...
   become: yes

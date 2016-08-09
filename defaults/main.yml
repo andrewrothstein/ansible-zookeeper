@@ -4,3 +4,4 @@ zookeeper_mirror: http://mirror.cc.columbia.edu/pub/software/apache/zookeeper
 zookeeper_user: zookeeper
 zookeeper_group: zookeeper
 zookeeper_home: /var/zookeeper
+zookeeper_dl_timeout_seconds: 600
