@@ -31,6 +31,7 @@
     copy=no
     src={{zookeeper_home}}/{{zookeeper_tgz}}
     dest={{zookeeper_home}}
+    creates={{zookeeper_home}}/{{zookeeper_name}}
 
 - name: link zookeeper...
   become: yes
