@@ -9,13 +9,13 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 7
+        - all
     - name: Fedora
       versions:
-        - 23
+        - all
     - name: Ubuntu
       versions:
-        - xenial
+        - all
   galaxy_tags:
     - development
 
@@ -23,4 +23,4 @@ dependencies:
   - role: andrewrothstein.unarchive-deps
     version: v1.0.3
   - role: andrewrothstein.java
-    version: v1.0.1
+    version: v1.0.2
