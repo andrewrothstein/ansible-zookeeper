@@ -24,3 +24,13 @@
     src={{zookeeper_parent_install_dir}}/{{zookeeper_name}}
     dest={{zookeeper_parent_install_dir}}/zookeeper
     state=link
+
+- name: add to path...
+  become: yes
+  become_user: root
+  with_items:
+    - etc/profile.d/zookeeper.sh
+  template: >-
+    src={{item}}.j2
+    dest=/{{item}}
+    mode=0644
