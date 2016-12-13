@@ -1,29 +1,31 @@
 andrewrothstein.zookeeper
 =========================
 
-Installs zookeeper. Does no ZK config. See andrewrothstein.zookeeper-cluster for the configuration.
+Installs [Zookeeper](http://zookeeper.apache.org/)
 
 Requirements
 ------------
 
-See [meta/main.yml]
+See [meta/main.yml](meta/main.yml)
 
 Role Variables
 --------------
 
-See [defaults/main.yml]
+See [defaults/main.yml](defaults/main.yml)
 
 Dependencies
 ------------
 
-See [meta/main.yml]
+See [meta/main.yml](meta/main.yml)
 
 Example Playbook
 ----------------
 
-    - hosts: servers
-      roles:
-         - andrewrothstein.zookeeper
+```yml
+- hosts: servers
+  roles:
+    - andrewrothstein.zookeeper
+```
 
 License
 -------
@@ -33,4 +35,4 @@ MIT
 Author Information
 ------------------
 
-Andrew Rothstein andrew.rothstein@gmail.com
+Andrew Rothstein <andrew.rothstein@gmail.com>

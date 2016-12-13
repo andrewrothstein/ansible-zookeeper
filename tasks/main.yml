@@ -1,42 +1,26 @@
 ---
-- name: create zookeeper group
-  become: yes
-  become_user: root
-  group: >-
-    name={{zookeeper_group}}
-    state=present
-
-- name: create zookeeper user
-  become: yes
-  become_user: root
-  user: >
-    name={{zookeeper_user}}
-    group={{zookeeper_group}}
-    state=present
-    home={{zookeeper_home}}
-
 - name: download zookeeper...
   become: yes
-  become_user: '{{zookeeper_user}}'
+  become_user: root
   get_url: >
     url={{zookeeper_tgz_url}}
-    dest={{zookeeper_home}}/{{zookeeper_tgz}}
-    mode=0644
+    dest=/tmp/{{zookeeper_tgz}}
     timeout={{zookeeper_dl_timeout_seconds}}
+    mode=0644
 
 - name: unarchive zookeeper...
   become: yes
-  become_user: '{{zookeeper_user}}'
+  become_user: root
   unarchive: >
     copy=no
-    src={{zookeeper_home}}/{{zookeeper_tgz}}
-    dest={{zookeeper_home}}
-    creates={{zookeeper_home}}/{{zookeeper_name}}
+    src=/tmp/{{zookeeper_tgz}}
+    dest={{zookeeper_parent_install_dir}}
+    creates={{zookeeper_parent_install_dir}}/{{zookeeper_name}}
 
 - name: link zookeeper...
   become: yes
-  become_user: '{{zookeeper_user}}'
+  become_user: root
   file: >
-    src={{zookeeper_home}}/{{zookeeper_name}}
-    dest={{zookeeper_home}}/zookeeper
+    src={{zookeeper_parent_install_dir}}/{{zookeeper_name}}
+    dest={{zookeeper_parent_install_dir}}/zookeeper
     state=link
