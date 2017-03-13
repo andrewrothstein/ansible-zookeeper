@@ -2,35 +2,38 @@
 - name: download zookeeper...
   become: yes
   become_user: root
-  get_url: >
-    url={{zookeeper_tgz_url}}
-    dest=/tmp/{{zookeeper_tgz}}
-    timeout={{zookeeper_dl_timeout_seconds}}
-    mode=0644
+  get_url:
+    url: '{{zookeeper_tgz_url}}'
+    checksum: '{{zookeeper_checksum}}'
+    dest: /tmp/{{zookeeper_tgz}}
+    timeout: '{{zookeeper_dl_timeout_seconds}}'
+    mode: 0644
 
 - name: unarchive zookeeper...
   become: yes
   become_user: root
-  unarchive: >
-    copy=no
-    src=/tmp/{{zookeeper_tgz}}
-    dest={{zookeeper_parent_install_dir}}
-    creates={{zookeeper_parent_install_dir}}/{{zookeeper_name}}
+  unarchive:
+    copy: no
+    src: /tmp/{{zookeeper_tgz}}
+    dest: '{{zookeeper_parent_install_dir}}'
+    creates: '{{zookeeper_parent_install_dir}}/{{zookeeper_name}}'
 
 - name: link zookeeper...
   become: yes
   become_user: root
-  file: >
-    src={{zookeeper_parent_install_dir}}/{{zookeeper_name}}
-    dest={{zookeeper_parent_install_dir}}/zookeeper
-    state=link
+  file:
+    src: '{{zookeeper_parent_install_dir}}/{{zookeeper_name}}'
+    dest: '{{zookeeper_parent_install_dir}}/zookeeper'
+    state: link
 
 - name: add to path...
   become: yes
   become_user: root
   with_items:
-    - etc/profile.d/zookeeper.sh
-  template: >-
-    src={{item}}.j2
-    dest=/{{item}}
-    mode=0644
+    - d: /etc/profile.d
+      f: zookeeper.sh
+      m: '0644'
+  template:
+    src: '{{item.f}}.j2'
+    dest: '{{item.d}}/{{item.f}}'
+    mode: '{{item.m}}'
