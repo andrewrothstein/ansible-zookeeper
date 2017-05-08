@@ -16,14 +16,14 @@
     copy: no
     src: /tmp/{{zookeeper_tgz}}
     dest: '{{zookeeper_parent_install_dir}}'
-    creates: '{{zookeeper_parent_install_dir}}/{{zookeeper_name}}'
+    creates: '{{zookeeper_install_dir}}'
 
 - name: link zookeeper...
   become: yes
   become_user: root
   file:
-    src: '{{zookeeper_parent_install_dir}}/{{zookeeper_name}}'
-    dest: '{{zookeeper_parent_install_dir}}/zookeeper'
+    src: '{{zookeeper_install_dir}}'
+    dest: '{{zookeeper_link_dir}}/zookeeper'
     state: link
 
 - name: add to path...
