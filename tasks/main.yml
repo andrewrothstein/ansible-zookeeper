@@ -23,7 +23,7 @@
   become_user: root
   file:
     src: '{{zookeeper_install_dir}}'
-    dest: '{{zookeeper_link_dir}}/zookeeper'
+    dest: '{{zookeeper_link_dir}}'
     state: link
 
 - name: add to path...
