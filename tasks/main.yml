@@ -13,7 +13,7 @@
   become: yes
   become_user: root
   unarchive:
-    remote_src: no
+    remote_src: yes
     src: /tmp/{{zookeeper_tgz}}
     dest: '{{zookeeper_parent_install_dir}}'
     creates: '{{zookeeper_install_dir}}'
