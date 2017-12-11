@@ -5,3 +5,4 @@ zookeeper_tgz_url : '{{zookeeper_mirror}}/{{zookeeper_name}}/{{zookeeper_tgz}}'
 
 zookeeper_install_dir: '{{zookeeper_parent_install_dir}}/{{zookeeper_name}}'
 zookeeper_link_dir: '{{zookeeper_parent_install_dir}}/zookeeper'
+zookeeper_checksum: '{{zookeeper_checksums[zookeeper_ver]}}'
