@@ -1,30 +1,45 @@
 ---
-- name: download zookeeper...
+- name: check for install...
   become: yes
-  become_user: root
-  get_url:
-    url: '{{zookeeper_tgz_url}}'
-    checksum: '{{zookeeper_checksum}}'
-    dest: /tmp/{{zookeeper_tgz}}
-    timeout: '{{zookeeper_dl_timeout_seconds}}'
-    mode: 0644
+  stat:
+    path: '{{zookeeper_install_dir}}'
+  changed_when: False
+  register: zookeeper_binary
+- when: not zookeeper_binary.stat.exists
+  block:
+    - name: download zookeeper...
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{zookeeper_tgz_url}}'
+        checksum: '{{zookeeper_checksum}}'
+        dest: /tmp/{{zookeeper_tgz}}
+        timeout: '{{zookeeper_dl_timeout_seconds}}'
+        mode: 0644
 
-- name: unarchive zookeeper...
-  become: yes
-  become_user: root
-  unarchive:
-    remote_src: yes
-    src: /tmp/{{zookeeper_tgz}}
-    dest: '{{zookeeper_parent_install_dir}}'
-    creates: '{{zookeeper_install_dir}}'
+    - name: unarchive zookeeper...
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{zookeeper_tgz}}
+        dest: '{{zookeeper_parent_install_dir}}'
+        creates: '{{zookeeper_install_dir}}'
 
-- name: link zookeeper...
-  become: yes
-  become_user: root
-  file:
-    src: '{{zookeeper_install_dir}}'
-    dest: '{{zookeeper_link_dir}}'
-    state: link
+    - name: link zookeeper...
+      become: yes
+      become_user: root
+      file:
+        src: '{{zookeeper_install_dir}}'
+        dest: '{{zookeeper_link_dir}}'
+        state: link
+  always:
+    - name: cleanup...
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{zookeeper_tgz}}
+        state: absent
 
 - name: add to path...
   become: yes
