@@ -1,5 +1,5 @@
 ---
-zookeeper_ver : '3.4.13'
+zookeeper_ver: '3.4.13'
 zookeeper_checksums:
   '3.4.10': sha256:7f7f5414e044ac11fee2a1e0bc225469f51fb0cdf821e67df762a43098223f27
   '3.4.11': sha256:f6bd68a1c8f7c13ea4c2c99f13082d0d71ac464ffaf3bf7a365879ab6ad10e84
