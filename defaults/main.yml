@@ -1,10 +1,11 @@
 ---
-zookeeper_ver: '3.4.13'
+zookeeper_ver: '3.4.14'
 zookeeper_checksums:
   '3.4.10': sha256:7f7f5414e044ac11fee2a1e0bc225469f51fb0cdf821e67df762a43098223f27
   '3.4.11': sha256:f6bd68a1c8f7c13ea4c2c99f13082d0d71ac464ffaf3bf7a365879ab6ad10e84
   '3.4.12': sha256:c686f9319050565b58e642149cb9e4c9cc8c7207aacc2cb70c5c0672849594b9
   '3.4.13': sha256:7ced798e41d2027784b8fd55c908605ad5bd94a742d5dab2506be8f94770594d
+  '3.4.14': sha256:b14f7a0fece8bd34c7fffa46039e563ac5367607c612517aa7bd37306afbd1cd
 zookeeper_mirror: http://apache.org/dist/zookeeper
 zookeeper_parent_install_dir: /usr/local
 zookeeper_dl_timeout_seconds: 600
