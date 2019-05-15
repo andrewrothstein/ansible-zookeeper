@@ -1,33 +1,31 @@
----
+dependencies:
+- role: andrewrothstein.unarchive-deps
+  version: v1.0.11
+- role: andrewrothstein.openjdk
+  version: v1.0.0
 galaxy_info:
   author: Andrew Rothstein
-  description: installs zookeeper
   company: BlackRock
+  description: installs zookeeper
+  galaxy_tags:
+  - zookeeper
+  - consensus
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-    - name: Alpine
-      versions:
-        - all
-    - name: Debian
-      versions:
-        - jessie
-  galaxy_tags:
-    - zookeeper
-    - consensus
-
-dependencies:
-  - role: andrewrothstein.unarchive-deps
-    version: v1.0.11
-  - role: andrewrothstein.java-oracle-jre
-    version: v2.1.3
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Alpine
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - jessie
