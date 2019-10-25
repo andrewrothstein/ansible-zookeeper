@@ -1,4 +1,9 @@
 ---
 - hosts: all
   roles:
-    - role: '{{playbook_dir}}'
+    - role: '{{ playbook_dir }}'
+      zookeeper_major_ver: 3
+      zookeeper_minor_ver: 4
+      zookeeper_patch_ver: 14
+    - role: '{{ playbook_dir }}'
+
