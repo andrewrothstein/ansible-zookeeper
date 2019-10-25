@@ -26,13 +26,6 @@
         dest: '{{ zookeeper_parent_install_dir }}'
         creates: '{{ zookeeper_install_dir }}'
 
-    - name: link zookeeper...
-      become: yes
-      become_user: root
-      file:
-        src: '{{ zookeeper_install_dir }}'
-        dest: '{{ zookeeper_link_dir }}'
-        state: link
   always:
     - name: cleanup...
       become: yes
@@ -40,6 +33,14 @@
       file:
         path: /tmp/{{ zookeeper_tgz }}
         state: absent
+
+- name: link zookeeper...
+  become: yes
+  become_user: root
+  file:
+    src: '{{ zookeeper_install_dir }}'
+    dest: '{{ zookeeper_link_dir }}'
+    state: link
 
 - name: add to path...
   become: yes
