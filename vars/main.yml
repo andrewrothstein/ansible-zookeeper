@@ -1,7 +1,7 @@
 ---
 zookeeper_ver: '{{ zookeeper_major_ver }}.{{ zookeeper_minor_ver }}.{{ zookeeper_patch_ver }}'
 zookeeper_name_prefix: '{% if zookeeper_minor_ver|int >= 5 %}apache-zookeeper{% else %}zookeeper{% endif %}'
-zookeeper_name: '{{ zookeeper_name_prefix }}-{{ zookeeper_ver }}'
+zookeeper_name: '{{ zookeeper_name_prefix }}-{{ zookeeper_ver }}{% if zookeeper_minor_ver|int >= 5 %}-bin{% endif %}'
 zookeeper_tgz: '{{ zookeeper_name }}.tar.gz'
 zookeeper_tgz_url: '{{ zookeeper_mirror }}/zookeeper-{{ zookeeper_ver }}/{{ zookeeper_tgz }}'
 
