@@ -21,4 +21,4 @@ zookeeper_checksums:
   # http://apache.org/dist/zookeeper/zookeeper-3.5.5/apache-zookeeper-3.5.5.tar.gz
   '3.5.5': sha256:60d527254b3816c75a1c46517768b873af5767dfcc2083d6c527b567461c546c
   # http://apache.org/dist/zookeeper/zookeeper-3.5.6/apache-zookeeper-3.5.6.tar.gz
-  '3.5.6': sha256:3d11e467f01ff0936d8bdb51f80a18d1f38dd4f394b43a1d89cc7afc5cdb418d
+  '3.5.6': sha256:db24700e453f2ad4b6b789d553fe828ccceef3977a7e6b36389580ec92397a7e
