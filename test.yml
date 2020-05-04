@@ -6,4 +6,3 @@
       zookeeper_minor_ver: 4
       zookeeper_patch_ver: 14
     - role: '{{ playbook_dir }}'
-
