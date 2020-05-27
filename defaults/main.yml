@@ -24,6 +24,8 @@ zookeeper_checksums:
   '3.5.6': sha256:db24700e453f2ad4b6b789d553fe828ccceef3977a7e6b36389580ec92397a7e
   # http://apache.org/dist/zookeeper/zookeeper-3.5.7/apache-zookeeper-3.5.7-bin.tar.gz
   '3.5.7': sha256:65c5439571cb86bc865d2a4878c83a3ed606d20cf550672e64b9bfdbbf3a8a08
+  # http://apache.org/dist/zookeeper/zookeeper-3.5.8/apache-zookeeper-3.5.8-bin.tar.gz
+  '3.5.8': sha256:c35ed6786d59b73920243f1a324d24c2ddfafb379041d7a350cc9a341c52caf3
   # http://apache.org/dist/zookeeper/zookeeper-3.6.0/apache-zookeeper-3.6.0-bin.tar.gz
   '3.6.0': sha256:89684e012fa8c98b5d4260c88652443c021bf85594b0fef1a3a0784118a59e94
   # http://apache.org/dist/zookeeper/zookeeper-3.6.1/apache-zookeeper-3.6.1-bin.tar.gz
