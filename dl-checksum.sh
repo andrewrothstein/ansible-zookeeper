@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
 
 dl_ver () {
@@ -18,4 +19,4 @@ dl_ver () {
     printf "  '%s': sha256:%s\n" $ver $(sha256sum $lfile | awk '{print $1}')
 }
 
-dl_ver ${1:-3.6.1} apache-zookeeper
+dl_ver ${1:-3.6.2} apache-zookeeper

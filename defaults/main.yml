@@ -5,7 +5,7 @@ zookeeper_dl_timeout_seconds: 600
 
 zookeeper_major_ver: 3
 zookeeper_minor_ver: 6
-zookeeper_patch_ver: 1
+zookeeper_patch_ver: 2
 
 zookeeper_checksums:
   # http://apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz
@@ -30,3 +30,5 @@ zookeeper_checksums:
   '3.6.0': sha256:89684e012fa8c98b5d4260c88652443c021bf85594b0fef1a3a0784118a59e94
   # http://apache.org/dist/zookeeper/zookeeper-3.6.1/apache-zookeeper-3.6.1-bin.tar.gz
   '3.6.1': sha256:5066dd085cee2a7435a1bb25677102f0d4ea585f314bd026799f333b0956a06d
+  # http://apache.org/dist/zookeeper/zookeeper-3.6.2/apache-zookeeper-3.6.2-bin.tar.gz
+  '3.6.2': sha256:476f6fce10f9528e3a4ad00e6cd1714563f602dd4924db78e506c0df28fea1e5
