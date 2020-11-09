@@ -3,9 +3,10 @@ zookeeper_mirror: http://apache.org/dist/zookeeper
 zookeeper_parent_install_dir: /usr/local
 zookeeper_dl_timeout_seconds: 600
 
-zookeeper_major_ver: 3
-zookeeper_minor_ver: 6
-zookeeper_patch_ver: 2
+zookeeper_ver:
+  major: 3
+  minor: 6
+  patch: 2
 
 zookeeper_checksums:
   # http://apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz

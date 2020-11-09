@@ -1,10 +1,11 @@
 ---
-zookeeper_ver: '{{ zookeeper_major_ver }}.{{ zookeeper_minor_ver }}.{{ zookeeper_patch_ver }}'
-zookeeper_name_prefix: '{% if zookeeper_major_ver|int >= 3 and zookeeper_minor_ver|int >= 5 %}apache-zookeeper{% else %}zookeeper{% endif %}'
-zookeeper_name: '{{ zookeeper_name_prefix }}-{{ zookeeper_ver }}{% if zookeeper_major_ver|int >= 3 and zookeeper_minor_ver|int >= 5 %}-bin{% endif %}'
+zookeeper_fq_ver: '{{ zookeeper_ver.major }}.{{ zookeeper_ver.minor }}.{{ zookeeper_ver.patch }}'
+zookeeper_name_prefix: '{% if zookeeper_ver.major|int >= 3 and zookeeper_ver.minor|int >= 5 %}apache-zookeeper{% else %}zookeeper{% endif %}'
+zookeeper_name: '{{ zookeeper_name_prefix }}-{{ zookeeper_fq_ver }}{% if zookeeper_ver.major|int >= 3 and zookeeper_ver.minor|int >= 5 %}-bin{% endif %}'
 zookeeper_tgz: '{{ zookeeper_name }}.tar.gz'
-zookeeper_tgz_url: '{{ zookeeper_mirror }}/zookeeper-{{ zookeeper_ver }}/{{ zookeeper_tgz }}'
+zookeeper_tmp_tgz: /tmp/{{ zookeeper_tgz }}
+zookeeper_tgz_url: '{{ zookeeper_mirror }}/zookeeper-{{ zookeeper_fq_ver }}/{{ zookeeper_tgz }}'
 
 zookeeper_install_dir: '{{ zookeeper_parent_install_dir }}/{{ zookeeper_name }}'
 zookeeper_link_dir: '{{ zookeeper_parent_install_dir }}/zookeeper'
-zookeeper_checksum: '{{ zookeeper_checksums[zookeeper_ver] }}'
+zookeeper_checksum: '{{ zookeeper_checksums[zookeeper_fq_ver] }}'
