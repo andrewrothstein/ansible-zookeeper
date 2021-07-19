@@ -1,6 +1,6 @@
 andrewrothstein.zookeeper
 =========================
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-zookeeper.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-zookeeper)
+![Build Status](https://github.com/andrewrothstein/ansible-zookeeper/actions/workflows/build.yml/badge.svg)
 
 Installs [Zookeeper](http://zookeeper.apache.org/)
 
