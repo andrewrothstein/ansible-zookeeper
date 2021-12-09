@@ -1,14 +1,14 @@
 ---
 - name: check for install in {{ zookeeper_install_dir }}
-  become: yes
+  become: true
   stat:
     path: '{{ zookeeper_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: zookeeper_binary
 - when: not zookeeper_binary.stat.exists
   block:
     - name: downloading {{ zookeeper_tgz_url }}
-      become: yes
+      become: true
       become_user: root
       get_url:
         url: '{{ zookeeper_tgz_url }}'
@@ -18,24 +18,24 @@
         mode: 0644
 
     - name: unarchiving {{ zookeeper_tmp_tgz }} to {{ zookeeper_parent_install_dir }}
-      become: yes
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ zookeeper_tmp_tgz }}'
         dest: '{{ zookeeper_parent_install_dir }}'
         creates: '{{ zookeeper_install_dir }}'
 
   always:
     - name: rm {{ zookeeper_tmp_tgz }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ zookeeper_tmp_tgz }}'
         state: absent
 
 - name: linking {{ zookeeper_link_dir }} to {{ zookeeper_install_dir }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ zookeeper_install_dir }}'
@@ -43,7 +43,7 @@
     state: link
 
 - name: add zookeeper executables to the default path...
-  become: yes
+  become: true
   become_user: root
   with_items:
     - d: /etc/profile.d
