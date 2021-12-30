@@ -1,6 +1,4 @@
-**~
-*.retry
-.ansible-roles/
+**~*.retry
 Dockerfile.*
 requirements.yml
-**.tar.gz
+!meta/requirements.yml

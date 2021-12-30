@@ -2,3 +2,9 @@
 - hosts: all
   roles:
     - role: '{{ playbook_dir }}'
+  tasks:
+    - command: bash -l -c 'zkServer.sh version'
+      register: zookeeper_test_output
+    - name: zkServer.sh version
+      debug:
+        msg: '{{ zookeeper_test_output.stdout }}'
