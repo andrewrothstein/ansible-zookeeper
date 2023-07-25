@@ -1,5 +1,5 @@
 ---
-zookeeper_mirror: http://apache.org/dist/zookeeper
+zookeeper_mirror: http://archive.apache.org/dist/zookeeper
 zookeeper_parent_install_dir: /usr/local
 zookeeper_dl_timeout_seconds: 600
 
