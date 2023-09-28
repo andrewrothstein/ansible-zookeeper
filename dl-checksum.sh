@@ -19,4 +19,4 @@ dl_ver () {
     printf "  '%s': sha256:%s\n" $ver $(sha256sum $lfile | awk '{print $1}')
 }
 
-dl_ver ${1:-3.8.1} apache-zookeeper
+dl_ver ${1:-3.9.0} apache-zookeeper
