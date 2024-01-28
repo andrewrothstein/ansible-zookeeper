@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.zookeeper
+  hosts: all
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: bash -l -c 'zkServer.sh version'
+    - name: Executing 'zkServer.sh version'
+      ansible.builtin.command: bash -l -c 'zkServer.sh version'
+      changed_when: false
       register: zookeeper_test_output
-    - name: zkServer.sh version
-      debug:
+    - name: Output from 'zkServer.sh version'
+      ansible.builtin.debug:
         msg: '{{ zookeeper_test_output.stdout }}'

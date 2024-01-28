@@ -1,61 +1,65 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- include_role:
+- name: Installing andrewrothstein.bash
+  ansible.builtin.include_role:
     name: andrewrothstein.bash
-- include_role:
+- name: INstalling andrewrothstein.temurin
+  ansible.builtin.include_role:
     name: andrewrothstein.temurin
-- name: check for install in {{ zookeeper_install_dir }}
+- name: Check for install in {{ zookeeper_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ zookeeper_install_dir }}'
   changed_when: false
   register: zookeeper_binary
-- when: not zookeeper_binary.stat.exists
+- name: Downloading and installing zookeeper
+  when: not zookeeper_binary.stat.exists
   block:
-    - name: downloading {{ zookeeper_tgz_url }}
+    - name: Downloading {{ zookeeper_tgz_url }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ zookeeper_tgz_url }}'
         checksum: '{{ zookeeper_checksum }}'
         dest: '{{ zookeeper_tmp_tgz }}'
         timeout: '{{ zookeeper_dl_timeout_seconds }}'
-        mode: 0644
+        mode: '644'
 
-    - name: unarchiving {{ zookeeper_tmp_tgz }} to {{ zookeeper_parent_install_dir }}
+    - name: Unarchiving {{ zookeeper_tmp_tgz }} to {{ zookeeper_parent_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ zookeeper_tmp_tgz }}'
         dest: '{{ zookeeper_parent_install_dir }}'
         creates: '{{ zookeeper_install_dir }}'
 
   always:
-    - name: rm {{ zookeeper_tmp_tgz }}
+    - name: Rm {{ zookeeper_tmp_tgz }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ zookeeper_tmp_tgz }}'
         state: absent
 
-- name: linking {{ zookeeper_link_dir }} to {{ zookeeper_install_dir }}
+- name: Linking {{ zookeeper_link_dir }} to {{ zookeeper_install_dir }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ zookeeper_install_dir }}'
     dest: '{{ zookeeper_link_dir }}'
     state: link
 
-- name: add zookeeper executables to the default path...
+- name: Add zookeeper executables to the default path...
   become: true
   become_user: root
   with_items:
     - d: /etc/profile.d
       f: zookeeper.sh
-      m: '0644'
-  template:
+      m: '644'
+  ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
     mode: '{{ item.m }}'
