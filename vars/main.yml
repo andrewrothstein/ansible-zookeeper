@@ -1,7 +1,7 @@
 ---
 zookeeper_fq_ver: '{{ zookeeper_ver.major }}.{{ zookeeper_ver.minor }}.{{ zookeeper_ver.patch }}'
-zookeeper_name_prefix: '{% if zookeeper_ver.major|int >= 3 and zookeeper_ver.minor|int >= 5 %}apache-zookeeper{% else %}zookeeper{% endif %}'
-zookeeper_name: '{{ zookeeper_name_prefix }}-{{ zookeeper_fq_ver }}{% if zookeeper_ver.major|int >= 3 and zookeeper_ver.minor|int >= 5 %}-bin{% endif %}'
+zookeeper_name_prefix: '{% if zookeeper_ver.major | int >= 3 and zookeeper_ver.minor | int >= 5 %}apache-zookeeper{% else %}zookeeper{% endif %}'
+zookeeper_name: '{{ zookeeper_name_prefix }}-{{ zookeeper_fq_ver }}{% if zookeeper_ver.major | int >= 3 and zookeeper_ver.minor | int >= 5 %}-bin{% endif %}'
 zookeeper_tgz: '{{ zookeeper_name }}.tar.gz'
 zookeeper_tmp_tgz: /tmp/{{ zookeeper_tgz }}
 zookeeper_tgz_url: '{{ zookeeper_mirror }}/zookeeper-{{ zookeeper_fq_ver }}/{{ zookeeper_tgz }}'

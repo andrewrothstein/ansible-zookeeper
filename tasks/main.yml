@@ -1,11 +1,8 @@
 ---
-- name: Installing andrewrothstein.unarchivedeps
-  ansible.builtin.include_role:
-    name: andrewrothstein.unarchivedeps
 - name: Installing andrewrothstein.bash
   ansible.builtin.include_role:
     name: andrewrothstein.bash
-- name: INstalling andrewrothstein.temurin
+- name: Installing andrewrothstein.temurin
   ansible.builtin.include_role:
     name: andrewrothstein.temurin
 - name: Check for install in {{ zookeeper_install_dir }}
@@ -26,7 +23,9 @@
         dest: '{{ zookeeper_tmp_tgz }}'
         timeout: '{{ zookeeper_dl_timeout_seconds }}'
         mode: '644'
-
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
     - name: Unarchiving {{ zookeeper_tmp_tgz }} to {{ zookeeper_parent_install_dir }}
       become: true
       become_user: root
