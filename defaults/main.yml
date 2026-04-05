@@ -6,7 +6,7 @@ zookeeper_dl_timeout_seconds: 600
 zookeeper_ver:
   major: 3
   minor: 9
-  patch: 3
+  patch: 5
 
 zookeeper_checksums:
   # http://apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz
@@ -47,9 +47,13 @@ zookeeper_checksums:
   '3.8.2': sha256:3ce34047c5a0cfa4d3eb2f33ce6b3ae0ca35a19fcf1039ce126d17da349a9ffa
   # http://apache.org/dist/zookeeper/zookeeper-3.8.3/apache-zookeeper-3.8.3-bin.tar.gz
   '3.8.3': sha256:e8abdad74fd1c76e8f4f41b25ed5a0c1ed3b59c8642281396a16d2cd5bf22ad4
+  # http://apache.org/dist/zookeeper/zookeeper-3.8.6/apache-zookeeper-3.8.6-bin.tar.gz
+  '3.8.6': sha256:9d28cfc78b78c1df880fb31723bb3b27a559f00d5571049b46cb259d6104aab8
   # http://apache.org/dist/zookeeper/zookeeper-3.9.0/apache-zookeeper-3.9.0-bin.tar.gz
   '3.9.0': sha256:3cedcb2a673c937b65e0a84c09fff85a3531c40e7e0f9ae01646de4366db2d7e
   # http://apache.org/dist/zookeeper/zookeeper-3.9.1/apache-zookeeper-3.9.1-bin.tar.gz
   '3.9.1': sha256:79e2cff61795e2fe1aa97aea4fac2819d5008d367879138c94e0b38c1142c1c0
   # http://apache.org/dist/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3-bin.tar.gz
-  '3.9.3': sha256:19aa2811d5a80c7ae36208ccd61091b5c77812e784c29ffac68b3792ab648f1c
+  '3.9.3': sha256:19aa2811d5a80c7ae36208ccd61091b5c77812e784c29ffac68b3792ab648f1
+  # http://apache.org/dist/zookeeper/zookeeper-3.9.5/apache-zookeeper-3.9.5-bin.tar.gz
+  '3.9.5': sha256:e752fe205abd9323eef8011ec3cb68adbb83678cfb5ab337159d0a40e12f93d7
