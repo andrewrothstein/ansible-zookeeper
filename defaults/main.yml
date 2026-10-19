@@ -54,6 +54,6 @@ zookeeper_checksums:
   # http://apache.org/dist/zookeeper/zookeeper-3.9.1/apache-zookeeper-3.9.1-bin.tar.gz
   '3.9.1': sha256:79e2cff61795e2fe1aa97aea4fac2819d5008d367879138c94e0b38c1142c1c0
   # http://apache.org/dist/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3-bin.tar.gz
-  '3.9.3': sha256:19aa2811d5a80c7ae36208ccd61091b5c77812e784c29ffac68b3792ab648f1
+  '3.9.3': sha256:19aa2811d5a80c7ae36208ccd61091b5c77812e784c29ffac68b3792ab648f1c
   # http://apache.org/dist/zookeeper/zookeeper-3.9.5/apache-zookeeper-3.9.5-bin.tar.gz
   '3.9.5': sha256:e752fe205abd9323eef8011ec3cb68adbb83678cfb5ab337159d0a40e12f93d7
