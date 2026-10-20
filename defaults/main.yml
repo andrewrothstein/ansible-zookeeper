@@ -47,13 +47,25 @@ zookeeper_checksums:
   '3.8.2': sha256:3ce34047c5a0cfa4d3eb2f33ce6b3ae0ca35a19fcf1039ce126d17da349a9ffa
   # http://apache.org/dist/zookeeper/zookeeper-3.8.3/apache-zookeeper-3.8.3-bin.tar.gz
   '3.8.3': sha256:e8abdad74fd1c76e8f4f41b25ed5a0c1ed3b59c8642281396a16d2cd5bf22ad4
+  # http://apache.org/dist/zookeeper/zookeeper-3.8.4/apache-zookeeper-3.8.4-bin.tar.gz
+  '3.8.4': sha256:284cb4675adb64794c63d95bf202d265cebddc0cda86ac86fb0ede8049de9187
+  # http://apache.org/dist/zookeeper/zookeeper-3.8.5/apache-zookeeper-3.8.5-bin.tar.gz
+  '3.8.5': sha256:d96c071419dae341285bfaa9059016b9de01c75f45948395b5b90879f8e091ab
   # http://apache.org/dist/zookeeper/zookeeper-3.8.6/apache-zookeeper-3.8.6-bin.tar.gz
   '3.8.6': sha256:9d28cfc78b78c1df880fb31723bb3b27a559f00d5571049b46cb259d6104aab8
+  # http://apache.org/dist/zookeeper/zookeeper-3.8.7/apache-zookeeper-3.8.7-bin.tar.gz
+  '3.8.7': sha256:2732774cdb46cf8a3ef83de4c57af3731f3c8ba2657725254018aa8dc7d86990
   # http://apache.org/dist/zookeeper/zookeeper-3.9.0/apache-zookeeper-3.9.0-bin.tar.gz
   '3.9.0': sha256:3cedcb2a673c937b65e0a84c09fff85a3531c40e7e0f9ae01646de4366db2d7e
   # http://apache.org/dist/zookeeper/zookeeper-3.9.1/apache-zookeeper-3.9.1-bin.tar.gz
   '3.9.1': sha256:79e2cff61795e2fe1aa97aea4fac2819d5008d367879138c94e0b38c1142c1c0
+  # http://apache.org/dist/zookeeper/zookeeper-3.9.2/apache-zookeeper-3.9.2-bin.tar.gz
+  '3.9.2': sha256:e911b2c6cebd9555cb0a61a270c913205276dab6d4527075d9aeaa86c97f593e
   # http://apache.org/dist/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3-bin.tar.gz
   '3.9.3': sha256:19aa2811d5a80c7ae36208ccd61091b5c77812e784c29ffac68b3792ab648f1c
+  # http://apache.org/dist/zookeeper/zookeeper-3.9.4/apache-zookeeper-3.9.4-bin.tar.gz
+  '3.9.4': sha256:c5b7cbda0b1b59d724e552d33775983f8a366bf651ba484937d0559d97bf0ae9
   # http://apache.org/dist/zookeeper/zookeeper-3.9.5/apache-zookeeper-3.9.5-bin.tar.gz
   '3.9.5': sha256:e752fe205abd9323eef8011ec3cb68adbb83678cfb5ab337159d0a40e12f93d7
+  # http://apache.org/dist/zookeeper/zookeeper-3.9.6/apache-zookeeper-3.9.6-bin.tar.gz
+  '3.9.6': sha256:6034c9b7b92e60b28ac1f36639f704af98f6d09e74b081664534d3004621d176
